@@ -1,22 +1,10 @@
 const mongoose = require("mongoose");
 
 const likesSchema = new mongoose.Schema({
-likes: {
-    type: Object,
-    require: true,
-    ref: "user"
-},
-  likescount: {
-        type: Number,
-        default: 0,
-    },
-
-   
-
-
-
-
-
-})
+  // Comment, that is being like
+  // Post, that is being liked
+  // User, that is liking the comment
+  // Timestamp, the date and time of the like
+});
 
 module.exports = mongoose.model("likes", userSchema);

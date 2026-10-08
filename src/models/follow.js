@@ -1,24 +1,18 @@
 const mongoose = require("mongoose");
 
 const followSchema = new mongoose.Schema({
-followers: {
-    type: Object,
+  follower: {
+    type: Object, // Object Type
     require: true,
-    ref: "user"
-},
-following: {
-    type: Object,
+    ref: "user",
+  },
+  following: {
+    type: Object, // Object Type
     require: true,
-   ref: "user"
-},
+    ref: "user",
+  },
 
-  followingcount: {
-        type: Number,
-        default: 0,
-    },
-
-
-
-})
+  // Timestamp.
+});
 
 module.exports = mongoose.model("followr", userSchema);
