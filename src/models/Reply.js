@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const commentsSchema = new mongoose.Schema(
+const replySchema = new mongoose.Schema(
   {
-    comment: {
+    reply: {
       type: String,
       required: true,
       trim: true,
@@ -20,19 +20,16 @@ const commentsSchema = new mongoose.Schema(
       required: true,
     },
 
-    likes: [
+    replylikes: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
       },
     ],
 
-    likesCount: {
-      type: Number,
-      default: 0,
-    },
+  
 
-    repliesCount: {
+    replyCount: {
       type: Number,
       default: 0,
     },
@@ -43,4 +40,4 @@ const commentsSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Comment", commentsSchema);
+module.exports = mongoose.model("reply", commentsSchema);

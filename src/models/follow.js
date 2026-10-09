@@ -25,7 +25,6 @@ const followSchema = new mongoose.Schema(
   }
 );
 
-// Prevent the same user from following another user twice
 followSchema.index(
   { follower: 1, following: 1 },
   { unique: true }
