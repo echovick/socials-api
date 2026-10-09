@@ -23,3 +23,5 @@ Functionalities
 - delete your comment
 - editing comment
 - viewing posts feed.
+
+- Implement The Login Route, write the controller, and the route files, and mount it on the app.js. create a new account and use it to test the login, all via postman.
