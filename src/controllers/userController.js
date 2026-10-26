@@ -21,6 +21,33 @@ async function getUser(req, res) {
 }
 
 // Update user profile
-async function updateMe(req, res) {}
+async function updateMe(req, res) {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        runValidators: true
+      }
+    );
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User profile not found"
+      });
+    }
+
+    res.status(200).json({
+      message: "User Profile Has Been Updated Successfully",
+      user
+    });
+
+  } catch (error) {
+    res.status(400).json({
+      message: "Unable to update user profile"
+    });
+  }
+}
 
 module.exports = { me, getUser, updateMe };
